@@ -3,20 +3,15 @@
 #include <atom-detour/DetourBase.hpp>
 #include <memory>
 
-namespace {
-  typedef unsigned char byte;
-  typedef unsigned int uint;
-}
-
 namespace atom {
   class StaticDetour : DetourBase {
   private:
     // Private members
-    std::shared_ptr<byte> mTrampoline;
+    std::shared_ptr<unsigned char> mTrampoline;
     size_t mBytesDisassembled;
 
     // Static members
-    static const byte PatchRelative[];
+    static const unsigned char PatchRelative[];
 
   public:
     /// <summary>

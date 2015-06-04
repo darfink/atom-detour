@@ -7,6 +7,10 @@
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
 namespace atom {
+  // Prevent tons of typing
+  typedef unsigned char byte;
+  typedef unsigned int uint;
+
   // 'jmp <relative>' - This is probably the best detour type to use
   const byte StaticDetour::PatchRelative[] = { 0xE9, 0x00, 0x00, 0x00, 0x00 };
 
