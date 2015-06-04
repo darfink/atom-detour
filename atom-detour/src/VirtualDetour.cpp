@@ -22,7 +22,7 @@ namespace atom {
     }
 
     MemoryRegion region(mVirtualTable[mVirtualTableIndex], sizeof(void*));
-    region.ExecuteFunction(MemoryRegion::ReadWriteExecute, [this, callback]() {
+    region.ExecuteFunction(Memory::ReadWriteExecute, [this, callback]() {
       mVirtualTable[mVirtualTableIndex] = callback;
       mDetoured = true;
     });
@@ -34,7 +34,7 @@ namespace atom {
     }
 
     MemoryRegion region(mVirtualTable[mVirtualTableIndex], sizeof(void*));
-    region.ExecuteFunction(MemoryRegion::ReadWriteExecute, [this]() {
+    region.ExecuteFunction(Memory::ReadWriteExecute, [this]() {
       mVirtualTable[mVirtualTableIndex] = mTarget;
       mDetoured = false;
     });

@@ -44,6 +44,11 @@ CPM_AddModule("atom-memory"
   GIT_REPOSITORY "https://github.com/darfink/atom-memory.git"
   GIT_TAG "master")
 
+CPM_AddModule("cpm-udis86"
+  GIT_REPOSITORY "https://github.com/darfink/cpm-udis86.git"
+  GIT_TAG "master"
+  USE_EXISTING_VER TRUE)
+
 CPM_ForceOnlyOneModuleVersion()
 CPM_InitModule(${CPM_MODULE_NAME})
 
@@ -51,10 +56,14 @@ CPM_InitModule(${CPM_MODULE_NAME})
 # Setup source
 #-----------------------------------------------------------------------
 
-set(UNICODE_DIR "${CMAKE_CURRENT_LIST_DIR}/atom-detour")
-set(ModuleHeaders "${UNICODE_DIR}/DetourBase.hpp")
-set(ModuleHeaders "${UNICODE_DIR}/VirtualDetour.hpp")
-set(ModuleSources "${UNICODE_DIR}/src/VirtualDetour.cpp")
+set(FILE_DIR "${CMAKE_CURRENT_LIST_DIR}/atom-detour")
+set(ModuleHeaders
+  "${FILE_DIR}/DetourBase.hpp"
+  "${FILE_DIR}/StaticDetour.hpp"
+  "${FILE_DIR}/VirtualDetour.hpp")
+set(ModuleSources
+  "${FILE_DIR}/src/VirtualDetour.cpp"
+  "${FILE_DIR}/src/StaticDetour.cpp")
 
 #-----------------------------------------------------------------------
 # Setup library

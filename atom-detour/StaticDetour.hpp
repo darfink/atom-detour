@@ -4,6 +4,7 @@
 #include <memory>
 
 namespace {
+  typedef unsigned char byte;
   typedef unsigned int uint;
 }
 
