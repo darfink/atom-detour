@@ -35,6 +35,10 @@ namespace atom {
     }
   }
 
+  StaticDetour::~StaticDetour() {
+    this->RemoveHook();
+  }
+
   void StaticDetour::ApplyHook(void* callback) {
     if(mDetoured) {
       return;
