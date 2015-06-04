@@ -15,7 +15,8 @@ namespace atom {
   const byte StaticDetour::PatchRelative[] = { 0xE9, 0x00, 0x00, 0x00, 0x00 };
 
   StaticDetour::StaticDetour(void* address) :
-      DetourBase(address) {
+      DetourBase(address),
+      mBytesDisassembled(0) {
     ud_t ud;
     ud_init(&ud);
 

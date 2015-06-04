@@ -2,6 +2,9 @@
 #include <atom-detour/VirtualDetour.hpp>
 
 namespace atom {
+  // Prevent tons of typing
+  typedef unsigned int uint;
+
   VirtualDetour::VirtualDetour(void* object, uint vtableIndex) :
       VirtualDetour(*reinterpret_cast<void***>(object), vtableIndex) {
   }

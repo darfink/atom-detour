@@ -2,27 +2,23 @@
 
 #include <atom-detour/DetourBase.hpp>
 
-namespace {
-  typedef unsigned int uint;
-}
-
 namespace atom {
   class VirtualDetour : DetourBase {
   private:
     // Private members
     void** mVirtualTable;
-    uint mVirtualTableIndex;
+    unsigned int mVirtualTableIndex;
 
   public:
     /// <summary>
     /// Constructs a virtual detour from an object
     /// </summary>
-    VirtualDetour(void* object, uint vtableIndex);
+    VirtualDetour(void* object, unsigned int vtableIndex);
 
     /// <summary>
     /// Constructs a virtual detour from a virtual table and index
     /// </summary>
-    VirtualDetour(void** virtualTable, uint vtableIndex);
+    VirtualDetour(void** virtualTable, unsigned int vtableIndex);
 
     /// <summary>
     /// Destructs the virtual detour and removes the hook
